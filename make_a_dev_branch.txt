@@ -1,0 +1,1 @@
+a test document made in notepad and committed from sourcetree to the new branch "branch_from_sourcetree"
