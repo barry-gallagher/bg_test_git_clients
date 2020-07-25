@@ -5,4 +5,5 @@
 # then commit in mod in pycharm brnch pycharm to master
 # sourcetee local change to rebase onto master
 # a second commit to squash
+## master commit to rebase into pycharm
 # add a line in sourcetree - not sure if this will create a conflcit
