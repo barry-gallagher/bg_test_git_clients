@@ -1,0 +1,13 @@
+name: ENVs100py
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8   # or 2.7
+  - sphinx
+  - sphinx-automodapi
+  - sphinx_autodoc_typehints
+  - sphinx-autodoc-typehints
+  - python-graphviz
+  - sphinxcontrib-fulltoc
+  - m2r2
+  - numpydoc
