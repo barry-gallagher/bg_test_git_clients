@@ -10,3 +10,4 @@ dependencies:
   - sphinxcontrib-fulltoc
   - m2r2
   - numpydoc
+  - h5py

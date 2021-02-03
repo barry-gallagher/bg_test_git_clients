@@ -34,7 +34,11 @@ import types
 
 import re
 import sphinx
+import mock
 
+MOCK_MODULES = ['numpy', 'scipy', 'matplotlib', 'matplotlib.pyplot', 'scipy.interpolate', 'osgeo', 'gdal', 'osr']
+for mod_name in MOCK_MODULES:
+    sys.modules[mod_name] = mock.Mock()
 
 top_classes = "s100py.s1xx.S1xxAttributesBase, s100py.s1xx.S1XXFile"
 
