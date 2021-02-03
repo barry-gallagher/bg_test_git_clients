@@ -1,0 +1,7 @@
+sphinx-automodapi
+sphinx_autodoc_typehints
+sphinx-autodoc-typehints
+python-graphviz
+sphinxcontrib-fulltoc
+m2r2
+numpydoc
