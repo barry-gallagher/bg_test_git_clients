@@ -49,7 +49,8 @@ p, f = os.path.split(__file__)
 root_p = os.path.normpath(p)
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.insert(0, os.path.abspath("..\\.."))
-
+import s100py
+print(s100py.__file__)
 # rst_prolog = """
 # .. |DOCS_DIR| replace:: %s
 # .. include:: %s\\_Globals\\substitutions.txt
@@ -133,7 +134,7 @@ def set_top_classes(*args, **kys):
         rst = open(path, 'r').read()
         loc = rst.find('.. inheritance-diagram::')
         if loc > 0:
-            # print(loc, path.name)
+            print(loc, path.name)
             end_diagram = rst.find("\n\n", loc)
             if ':top-classes:' not in rst[loc:end_diagram].lower():
                 out = open(path, 'w')
@@ -199,7 +200,6 @@ elif use_autoapi:
     autoapi_file_pattern = "*.py"
 
 # graphviz_dot = os.path.normpath(os.path.join(root_p, r"..\..\..\..\envs\Pydro367\Library\bin\graphviz\dot.exe"))
-graphviz_dot= settings.GRAPHVIZ_DOT_PATH
 
 autodoc_default_options = {
    # 'members': 'var1, var2',
