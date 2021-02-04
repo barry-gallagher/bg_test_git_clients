@@ -198,7 +198,8 @@ elif use_autoapi:
     autoapi_type = "python"
     autoapi_file_pattern = "*.py"
 
-graphviz_dot = os.path.normpath(os.path.join(root_p, r"..\..\..\..\envs\Pydro367\Library\bin\graphviz\dot.exe"))
+# graphviz_dot = os.path.normpath(os.path.join(root_p, r"..\..\..\..\envs\Pydro367\Library\bin\graphviz\dot.exe"))
+graphviz_dot= settings.GRAPHVIZ_DOT_PATH
 
 autodoc_default_options = {
    # 'members': 'var1, var2',
