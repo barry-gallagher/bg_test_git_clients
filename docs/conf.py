@@ -131,10 +131,12 @@ def set_top_classes(*args, **kys):
     """
     # path = pathlib.Path(doctree['source'])
     # if path.parent.name == 'api':
-    print("../_build/doctrees::")
-    print(os.listdir("../_build/doctrees"))
-    print("../_build/html::")
-    print(os.listdir("../_build/html"))
+    print("_build/doctrees::")
+    print(os.listdir("_build/doctrees"))
+    print("_build/html::")
+    print(os.listdir("_build/html"))
+    print("current dir::")
+    print(os.listdir("./"))
     for path in pathlib.Path(root_p).joinpath('api').glob('*.rst'):
         rst = open(path, 'r').read()
         loc = rst.find('.. inheritance-diagram::')
