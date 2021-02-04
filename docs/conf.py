@@ -137,6 +137,10 @@ def set_top_classes(*args, **kys):
     print(os.listdir("_build/html"))
     print("current dir::")
     print(os.listdir("./"))
+    print("parent dir::")
+    print(os.listdir("../"))
+    print("s100py dir::")
+    print(os.listdir("../s100py/"))
     for path in pathlib.Path(root_p).joinpath('api').glob('*.rst'):
         rst = open(path, 'r').read()
         loc = rst.find('.. inheritance-diagram::')
