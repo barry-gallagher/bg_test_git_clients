@@ -12,5 +12,3 @@ dependencies:
   - numpydoc
   - h5py
   - numpy
-  - pip:
-    - thyme
