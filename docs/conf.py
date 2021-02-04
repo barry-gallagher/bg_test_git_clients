@@ -49,8 +49,9 @@ p, f = os.path.split(__file__)
 root_p = os.path.normpath(p)
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.insert(0, os.path.abspath("..\\.."))
+print("conf.py location:",__file__)
 import s100py
-print(s100py.__file__)
+print("s100py location:", s100py.__file__)
 # rst_prolog = """
 # .. |DOCS_DIR| replace:: %s
 # .. include:: %s\\_Globals\\substitutions.txt
