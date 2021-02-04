@@ -246,7 +246,7 @@ source_suffix = {
 }
 
 # The master toctree document.
-master_doc = 's100py'
+master_doc = 'index'
 
 # adds figure numbers automatically
 numfig = True
