@@ -6,9 +6,9 @@ s100py
 
     using_the_api
     s111
-    s102/s102
+    s104
+    s102
     s100
     s1xx
     for_api_developers
-    s102/s102_readme
 
