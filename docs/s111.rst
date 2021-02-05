@@ -1,4 +1,10 @@
 S111
 ====
 
-..  automodapi:: s100py.s111
+.. toctree::
+    :maxdepth: 4
+
+    s111/s111_readme
+    s111/s111_utils
+    s111/s111_api
+
