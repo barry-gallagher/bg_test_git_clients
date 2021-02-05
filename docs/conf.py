@@ -36,7 +36,7 @@ import re
 import sphinx
 import mock
 
-MOCK_MODULES = ['scipy', 'matplotlib', 'matplotlib.pyplot', 'scipy.interpolate', 'osgeo', 'gdal', 'osr', 'thyme']
+MOCK_MODULES = ['scipy', 'matplotlib', 'matplotlib.pyplot', 'scipy.interpolate', 'osgeo', 'gdal', 'osr']
 for mod_name in MOCK_MODULES:
     sys.modules[mod_name] = mock.Mock()
 
@@ -49,9 +49,7 @@ p, f = os.path.split(__file__)
 root_p = os.path.normpath(p)
 sys.path.insert(0, os.path.abspath(".."))
 sys.path.insert(0, os.path.abspath("..\\.."))
-print("conf.py location:",__file__)
-import s100py
-print("s100py location:", s100py.__file__)
+
 # rst_prolog = """
 # .. |DOCS_DIR| replace:: %s
 # .. include:: %s\\_Globals\\substitutions.txt
@@ -69,59 +67,9 @@ print("s100py location:", s100py.__file__)
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # html_favicon = '%s/_static/pydro.ico' % root_p
 
-import inspect
-
 
 # watch out, used ratio (without reading spec) and it made the image go to two pages which fails with sphinx
 inheritance_graph_attrs = dict(rankdir="TB", size='"24.0 36.0"')  # make the pictures bigger, default is "8.0 12.0"
-
-def check_to_skip(app, what, name, obj, skip, options):
-    """ The member is excluded if a handler returns True. It is included if the handler returns False.
-    If more than one enabled extension handles the autodoc-skip-member event, 
-    autodoc will use the first non-None value returned by a handler. 
-    Handlers should return None to fall back to the skipping behavior of autodoc and other enabled extensions."""
-    print("auto-skip-check")
-    print(app, what, name, type(obj), obj, skip, options)
-    print()
-    options['exclude-members'].update(["dimension_attribute_name"])
-    if "Callable" in name or "FeatureContainer" in name or "s102.s102" in name:
-        print(what, name, type(obj), obj, skip, options)
-        print()
-    if isinstance(options, dict):
-        if options.get("meth", "") == "run":
-            modname = ""
-            if isinstance(what, (list, tuple)):
-                if len(what) == 2:
-                    what, modname = what
-            if options.get("cls", False) == True:
-                if modname not in obj:
-                    print("skipping")
-                    print()
-                    return True
-    if isinstance(obj, property) or "property" in str(obj):
-        # class bathymetry_coverage < property object at 0x0000019161C07278 > False {'members': <object object at 0x000001915FFC3110 >, 'undoc-members': True, 'show-inheritance': True}
-        if name.endswith("_type") or name.endswith("_attribute_name"):  # re.search("_type", name):
-            if name.endswith("sequencing_rule_type") or name.endswith("interpolation_type"):
-                return False
-            else:
-                return True
-    if "<class 'str'>" in str(obj):
-        # class bathymetry_coverage < property object at 0x0000019161C07278 > False {'members': <object object at 0x000001915FFC3110 >, 'undoc-members': True, 'show-inheritance': True}
-        if name.endswith("_attribute_name"):  # re.search("_type", name):
-            return True
-
-    if isinstance(obj, types.FunctionType) or "function" in str(obj):
-        # class bathymetry_coverage < property object at 0x0000019161C07278 > False {'members': <object object at 0x000001915FFC3110 >, 'undoc-members': True, 'show-inheritance': True}
-        if name.endswith("_remove") or name.endswith("_create"):  # re.search("_type", name):
-            # print("True")
-            return True
-
-
-def source_read_handler(app, docname, source):
-    print("<source read handler>", docname, "</source read handler>")
-    # print(docname, source)
-    # print("</source read handler>")
-    pass
 
 def set_top_classes(*args, **kys):
     """The automodapi is making .rst files for each class but the inheritance graph is
@@ -131,18 +79,6 @@ def set_top_classes(*args, **kys):
     """
     # path = pathlib.Path(doctree['source'])
     # if path.parent.name == 'api':
-    print("_build/doctrees::")
-    print(os.listdir("_build/doctrees"))
-    print("_build/html::")
-    print(os.listdir("_build/html"))
-    print("current dir::")
-    print(os.listdir("./"))
-    print("parent dir::")
-    print(os.listdir("../"))
-    print("s100py dir::")
-    print(os.listdir("../s100py/"))
-    print("s102 dir::")
-    print(os.listdir("../s100py/s102/"))
     for path in pathlib.Path(root_p).joinpath('api').glob('*.rst'):
         rst = open(path, 'r').read()
         loc = rst.find('.. inheritance-diagram::')
