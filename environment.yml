@@ -14,4 +14,4 @@ dependencies:
   - numpy
   - gdal
   - pip:
-    thyme
+    - thyme
