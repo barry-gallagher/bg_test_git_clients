@@ -1,3 +1,4 @@
+# trying as single-branch, shallow "depth" checkout
 # update whil eon branch
 #edit in master to see how singe-brnach works on other side
 
