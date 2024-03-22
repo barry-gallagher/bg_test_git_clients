@@ -3,6 +3,7 @@
 #edit in master to see how singe-brnach works on other side
 
 # Barry was here too
+# second but only local
 # added in pycharm to rebase.  may be conflict?
 ## a first commit for squahs fom pycharm
 # This is into master to make sourcetree rebase a 2nd time
@@ -21,6 +22,8 @@
 
 #test comment
 #evan's test
-
+Make a change
 # test comment
 # matt was here, and was here again!
+
+# making edits to the file - toshi
