@@ -3,6 +3,7 @@
 #edit in master to see how singe-brnach works on other side
 
 # Barry was here too
+# second but only local
 # added in pycharm to rebase.  may be conflict?
 ## a first commit for squahs fom pycharm
 # This is into master to make sourcetree rebase a 2nd time
