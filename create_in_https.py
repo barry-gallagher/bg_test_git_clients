@@ -2,6 +2,7 @@
 # update whil eon branch
 #edit in master to see how singe-brnach works on other side
 
+# Barry was here too
 # added in pycharm to rebase.  may be conflict?
 ## a first commit for squahs fom pycharm
 # This is into master to make sourcetree rebase a 2nd time
@@ -15,6 +16,8 @@
 # a second commit to squash
 ## master commit to rebase into pycharm
 # add a line in sourcetree - not sure if this will create a conflcit
+
+# Barry was first today
 
 #test comment
 #evan's test
